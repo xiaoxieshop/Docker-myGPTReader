@@ -3,7 +3,7 @@ FROM python:3.10-slim
 ENV TZ=Asia/Shanghai \
     LANG=zh_CN.UTF-8
 
-WORKDIR /app
+WORKDIR /gpt
 
 COPY myGPTReader/* .
 
