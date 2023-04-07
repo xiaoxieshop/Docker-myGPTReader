@@ -5,7 +5,7 @@ ENV TZ Asia/Shanghai \
 
 WORKDIR /app
 
-COPY . .
+COPY myGPTReader/* .
 
 RUN pip install --no-cache-dir -r requirements.txt \
     && apk add --no-cache tzdata \
