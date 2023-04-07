@@ -50,14 +50,20 @@ jobs:
       run: |
         echo ${{ steps.date.outputs.time }}
         git clone https://github.com/madawei2699/myGPTReader.git
+        echo "查看当前文件"
+        ls
+        cd myGPTReader
+        echo "查看myGPTReader内的文件"
+        ls -a
+        
 
-    - name: Build and push
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        file: ./Dockerfile
-        platforms: linux/amd64,linux/arm64
-        push: true
-        tags: |
-          ${{ secrets.DOCKER_USERNAME }}/gptreader
-          ${{ secrets.DOCKER_USERNAME }}/gptreader:${{ steps.date.outputs.time }}
+    # - name: Build and push
+    #   uses: docker/build-push-action@v4
+    #   with:
+    #     context: .
+    #     file: ./Dockerfile
+    #     platforms: linux/amd64,linux/arm64
+    #     push: true
+    #     tags: |
+    #       ${{ secrets.DOCKER_USERNAME }}/gptreader
+    #       ${{ secrets.DOCKER_USERNAME }}/gptreader:${{ steps.date.outputs.time }}
