@@ -60,4 +60,4 @@ jobs:
         push: true
         tags: |
           ${{ secrets.DOCKER_USERNAME }}/gptreader
-        # ${{ secrets.DOCKER_USERNAME }}/gptreader:${{ steps.date.outputs.time }}
+          ${{ secrets.DOCKER_USERNAME }}/gptreader:${{ steps.date.outputs.time }}
