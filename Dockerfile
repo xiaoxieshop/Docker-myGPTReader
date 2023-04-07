@@ -5,7 +5,7 @@ ENV TZ=Asia/Shanghai \
 
 WORKDIR /gpt
 
-COPY myGPTReader/* .
+COPY myGPTReader .
 
 RUN python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
