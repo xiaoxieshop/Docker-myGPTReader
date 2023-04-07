@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.9-slim
 
 ENV TZ=Asia/Shanghai \
     LANG=zh_CN.UTF-8
