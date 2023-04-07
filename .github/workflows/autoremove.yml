@@ -1,0 +1,23 @@
+name: remove
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '12 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+   
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ github.repository }}
+          retain_days: 3
+          keep_minimum_runs: 10
