@@ -7,7 +7,8 @@ WORKDIR /app
 
 COPY myGPTReader/* .
 
-RUN pip install --no-cache-dir -r requirements.txt \
+RUN python -m pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
     && apk add --no-cache tzdata \
     && tzdata /usr/share/zoneinfo/Asia/Shanghai \
     && rm -rf /var/cache/apk/*
