@@ -6,11 +6,11 @@ USER root
 
 WORKDIR /app
 
-COPY . .
+COPY myGPTReader .
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-RUN mkdir /data && mkdir /data/myGPTReader
+RUN ls \
+    && pip install --no-cache-dir -r requirements.txt \
+    && mkdir /data && mkdir /data/myGPTReader
 
 EXPOSE 8080
 
